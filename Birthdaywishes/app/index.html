@@ -13,40 +13,40 @@
     <title>BirthdayWishlist</title>
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="bower_components/html5-boilerplate/dist/css/normalize.css">
-    <link rel="stylesheet" href="bower_components/html5-boilerplate/dist/css/main.css">
+    <!--link rel="stylesheet" href="bower_components/html5-boilerplate/dist/css/normalize.css">
+    <link rel="stylesheet" href="bower_components/html5-boilerplate/dist/css/main.css"-->
     <link rel="stylesheet" href="app.css">
-    <script src="bower_components/html5-boilerplate/dist/js/vendor/modernizr-2.8.3.min.js"></script>
+    <!--script src="bower_components/html5-boilerplate/dist/js/vendor/modernizr-2.8.3.min.js"></script-->
     <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.4.9/angular.min.js"></script>
+    <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.4.9/angular-route.js"></script>
+    <!--script src="bower_components/angular/angular.js"></script>
+    <script src="bower_components/angular-route/angular-route.js"></script-->
     <script src="app.js"></script>
-</head>
-<body>
-<div ng-app="myApp" ng-controller="myCtrl" ng-strict-di>
-    <!-- Eventually this will be the front page for intro and user login. There will also
-    be a basic printable/sharable list for those who do not wish to log on -->
-    <h1>Welcome!</h1>
-    <button ng-click="myFunction()">Create Birthday Wish List</button>
-</div>
 
+</head>
+
+<body>
 <!--[if lt IE 7]>
 <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade
     your browser</a> to improve your experience.</p>
 <![endif]-->
 
-<div ng-view></div>
+<!-------------------------------- My code starts here ------------------------------------------------->
 
-<div>Angular seed app: v<span app-version></span></div>
+<div ng-app="myApp">
+    <div ng-view  ng-strict-di></div>
+</div>
 
+<!------------------------------------------- End of my code ------------------------------------------->
 <!-- In production use:
 <script src="//ajax.googleapis.com/ajax/libs/angularjs/x.x.x/angular.min.js"></script>
 -->
-<script src="bower_components/angular/angular.js"></script>
-<script src="bower_components/angular-route/angular-route.js"></script>
-<script src="app.js"></script>
-<script src="view1/view1.js"></script>
-<script src="view2/view2.js"></script>
-<script src="components/version/version.js"></script>
-<script src="components/version/version-directive.js"></script>
-<script src="components/version/interpolate-filter.js"></script>
+
+<!--script src="../components/version/version.js"></script>
+<script src="../components/version/version-directive.js"></script>
+<script src="../components/version/interpolate-filter.js"></script-->
+
+<script src="appController.js"></script>
+<script src="./main/welcomeController.js"></script>
 </body>
 </html>

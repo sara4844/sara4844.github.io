@@ -1,18 +1,29 @@
 'use strict';
-
-// Declare app level module which depends on views, and components
+/* this file contains all configurations */
 var app = angular.module('myApp', [
-  'ngRoute',
-  'myApp.view1',
-  'myApp.view2',
-  'myApp.version'
+  'ngRoute'
 ]);
+
 app.config(['$routeProvider', function($routeProvider) {
-  $routeProvider.otherwise({redirectTo: '/view1'});
+  $routeProvider
+      .when("/", {
+        templateUrl : "./main/welcome.html",
+        controller: "./main/welcomeController"
+      })
+      .when("/MyList", {
+        templateUrl : "./Birthdee/birthdee.html",
+        controller: "./Birthdee/birthdeeController.js"
+      })
+      .when("/Genie", {
+        templateUrl : "/genie/genie.html",
+        controller: "/genie/genieController.js"
+      })
+      .otherwise({redirectTo: '/'});
 }]);
-app.controller('myCtrl', ['$scope', function($scope) {
-  $scope.count = 0;
-  $scope.myFunction = function() {
-    $scope.count++;
+// scope accesses the view that we wish to modify
+app.controller('myCtrl', ['$scope', '$location', function($scope, $location) {
+
+  $scope.createBdayList = function() {
+    //$location.url('/BirthdeeView');
   }
 }]);
